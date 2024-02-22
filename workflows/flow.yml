@@ -1,0 +1,24 @@
+name: Despliegue a producción
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  despliegue:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del código
+      uses: actions/checkout@v2
+      
+    - name: Instalar dependencias
+      run: npm install
+      
+    - name: Compilar aplicación
+      run: npm run build
+      
+    - name: Desplegar a producción
+      run: |
+        ssh usuario@servidor 'bash -s' < deploy.sh
