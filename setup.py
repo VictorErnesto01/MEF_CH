@@ -7,7 +7,7 @@ setup(
     license='MIT',
     description='Varias utilidades para resolver Ecuaciones Diferenciales con Elemento Finito',
     install_requires=["numpy",
-                      "matplotlib.pyplot",
+                      "matplotlib",
                       "gmsh",
                       "shapely",
                       "meshio"],
